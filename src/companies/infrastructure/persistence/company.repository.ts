@@ -1,5 +1,5 @@
-import { NullableType } from '../../../utils/types/nullable.type';
-import { IPaginationOptions } from '../../../utils/types/pagination-options';
+import { NullableType } from '@utils/types/nullable.type';
+import { IPaginationOptions } from '@utils/types/pagination-options';
 import { Company } from '../../domain/company';
 
 export abstract class CompanyRepository {
