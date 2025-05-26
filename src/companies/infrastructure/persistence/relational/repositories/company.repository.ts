@@ -3,10 +3,10 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { CompanyRepository } from '../../company.repository';
 import { CompanyEntity } from '../entities/company.entity';
-import { Company } from '../../../domain/company';
+import { Company } from '@companies/domain/company';
 import { CompanyMapper } from '../mappers/company.mapper';
-import { IPaginationOptions } from '../../../../utils/types/pagination-options';
-import { NullableType } from '../../../../utils/types/nullable.type';
+import { IPaginationOptions } from '@utils/types/pagination-options';
+import { NullableType } from '@utils/types/nullable.type';
 
 @Injectable()
 export class CompaniesRelationalRepository implements CompanyRepository {
