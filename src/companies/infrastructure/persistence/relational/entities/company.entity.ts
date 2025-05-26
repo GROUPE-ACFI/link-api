@@ -8,7 +8,7 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 import { AddressEntity } from './address.entity';
-import { EntityRelationalHelper } from '../../../../utils/relational-entity-helper';
+import { EntityRelationalHelper } from '../../../../../utils/relational-entity-helper';
 
 @Entity({ name: 'company' })
 export class CompanyEntity extends EntityRelationalHelper {
