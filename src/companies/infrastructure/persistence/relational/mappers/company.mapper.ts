@@ -1,5 +1,5 @@
-import { Company } from '../../../../domain/company';
-import { Address } from '../../../../domain/address';
+import { Company } from '@companies/domain/company';
+import { Address } from '@companies/domain/address';
 import { CompanyEntity } from '../entities/company.entity';
 import { AddressEntity } from '../entities/address.entity';
 

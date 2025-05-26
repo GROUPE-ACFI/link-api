@@ -3,8 +3,8 @@ import { CompanyRepository } from './infrastructure/persistence/company.reposito
 import { CreateCompanyDto } from './dto/create-company.dto';
 import { UpdateCompanyDto } from './dto/update-company.dto';
 import { Company } from './domain/company';
-import { IPaginationOptions } from '../utils/types/pagination-options';
-import { NullableType } from '../utils/types/nullable.type';
+import { IPaginationOptions } from '@utils/types/pagination-options';
+import { NullableType } from '@utils/types/nullable.type';
 import { Address } from './domain/address';
 import { AddressDto } from './dto/address.dto';
 

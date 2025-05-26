@@ -1,7 +1,7 @@
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { CompanyEntity } from './company.entity';
-import { AddressType } from '../../../../domain/address-type.enum';
-import { EntityRelationalHelper } from '../../../../../utils/relational-entity-helper';
+import { AddressType } from '@companies/domain/address-type.enum';
+import { EntityRelationalHelper } from '@utils/relational-entity-helper';
 
 @Entity({ name: 'address' })
 export class AddressEntity extends EntityRelationalHelper {

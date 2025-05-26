@@ -24,9 +24,9 @@ import { Company } from './domain/company';
 import {
   InfinityPaginationResponse,
   InfinityPaginationResponseDto,
-} from '../utils/dto/infinity-pagination-response.dto';
+} from '@utils/dto/infinity-pagination-response.dto';
 import { QueryCompanyDto } from './dto/query-company.dto';
-import { infinityPagination } from '../utils/infinity-pagination';
+import { infinityPagination } from '@utils/infinity-pagination';
 
 @ApiBearerAuth()
 @ApiTags('Companies')
