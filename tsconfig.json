@@ -10,6 +10,10 @@
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
+    "paths": {
+      "@utils/*": ["src/utils/*"],
+      "@companies/*": ["src/companies/*"]
+    },
     "incremental": true,
     "skipLibCheck": true,
     "strictNullChecks": true,
