@@ -16,7 +16,9 @@ export class CreateCompany1715128537217 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.query(`ALTER TABLE "address" DROP CONSTRAINT "FK_address_company"`);
+    await queryRunner.query(
+      `ALTER TABLE "address" DROP CONSTRAINT "FK_address_company"`,
+    );
     await queryRunner.query(`DROP TABLE "address"`);
     await queryRunner.query(`DROP TABLE "company"`);
   }

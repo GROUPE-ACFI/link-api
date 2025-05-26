@@ -43,7 +43,7 @@ export class CompanyEntity extends EntityRelationalHelper {
   phone: string;
 
   @Column({ nullable: true })
-  website?: string;
+  website?: string | null;
 
   @OneToMany(() => AddressEntity, (address) => address.company, {
     cascade: true,

@@ -1,5 +1,5 @@
-import { Company } from '../../../domain/company';
-import { Address } from '../../../domain/address';
+import { Company } from '../../../../domain/company';
+import { Address } from '../../../../domain/address';
 import { CompanyEntity } from '../entities/company.entity';
 import { AddressEntity } from '../entities/address.entity';
 
@@ -17,16 +17,17 @@ export class CompanyMapper {
     domain.email = entity.email;
     domain.phone = entity.phone;
     domain.website = entity.website ?? null;
-    domain.addresses = entity.addresses?.map((addr) => {
-      const a = new Address();
-      a.id = addr.id;
-      a.street = addr.street;
-      a.postalCode = addr.postalCode;
-      a.city = addr.city;
-      a.country = addr.country;
-      a.type = addr.type;
-      return a;
-    }) ?? null;
+    domain.addresses =
+      entity.addresses?.map((addr) => {
+        const a = new Address();
+        a.id = addr.id;
+        a.street = addr.street;
+        a.postalCode = addr.postalCode;
+        a.city = addr.city;
+        a.country = addr.country;
+        a.type = addr.type;
+        return a;
+      }) ?? null;
     return domain;
   }
 

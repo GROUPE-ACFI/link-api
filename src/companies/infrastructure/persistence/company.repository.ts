@@ -3,9 +3,7 @@ import { IPaginationOptions } from '../../../utils/types/pagination-options';
 import { Company } from '../../domain/company';
 
 export abstract class CompanyRepository {
-  abstract create(
-    data: Omit<Company, 'id'>,
-  ): Promise<Company>;
+  abstract create(data: Omit<Company, 'id'>): Promise<Company>;
 
   abstract findManyWithPagination(options: {
     paginationOptions: IPaginationOptions;
