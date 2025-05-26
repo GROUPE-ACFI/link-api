@@ -1,6 +1,6 @@
 import { NullableType } from '@utils/types/nullable.type';
 import { IPaginationOptions } from '@utils/types/pagination-options';
-import { Company } from '../../domain/company';
+import { Company } from '@companies/domain/company';
 
 export abstract class CompanyRepository {
   abstract create(data: Omit<Company, 'id'>): Promise<Company>;
