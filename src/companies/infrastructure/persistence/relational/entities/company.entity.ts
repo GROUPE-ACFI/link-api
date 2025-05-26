@@ -42,7 +42,11 @@ export class CompanyEntity extends EntityRelationalHelper {
   @Column()
   phone: string;
 
-  @Column({ nullable: true })
+  @Column({
+    type: 'varchar',
+    length: 255,
+    nullable: true,
+  })
   website?: string | null;
 
   @OneToMany(() => AddressEntity, (address) => address.company, {
