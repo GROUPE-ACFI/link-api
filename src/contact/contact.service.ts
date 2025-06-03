@@ -4,6 +4,7 @@ import { Repository } from 'typeorm';
 import { Contact } from './contact.entity';
 import { CreateContactDto } from './create-contact.dto';
 import { UpdateContactDto } from './update-contact.dto';
+import { plainToClass } from 'class-transformer';
 
 @Injectable()
 export class ContactService {
@@ -21,7 +22,8 @@ export class ContactService {
   }
 
   create(createContactDto: CreateContactDto): Promise<Contact> {
-    return this.contactRepository.save(createContactDto);
+    const contactEntity = plainToClass(Contact, createContactDto);
+    return this.contactRepository.save(contactEntity);
   }
 
   async update(id: string, updateContactDto: UpdateContactDto): Promise<Contact | null> {
