@@ -32,8 +32,18 @@ export class ContactService {
     return this.contactRepository.save(contactEntity);
   }
 
-  async update(id: string, updateContactDto: UpdateContactDto): Promise<Contact | null> {
-    await this.contactRepository.update(id, updateContactDto);
+  async update(
+    id: string,
+    updateContactDto: UpdateContactDto,
+  ): Promise<Contact | null> {
+    const contactEntity = plainToClass(Contact, updateContactDto);
+    contactEntity.id = Number(id);
+    if (updateContactDto.companies) {
+      contactEntity.companies = updateContactDto.companies.map(
+        (companyId) => ({ id: companyId } as CompanyEntity),
+      );
+    }
+    await this.contactRepository.save(contactEntity);
     return this.findOne(id);
   }
 
