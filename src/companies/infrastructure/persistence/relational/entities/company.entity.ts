@@ -4,11 +4,13 @@ import {
   DeleteDateColumn,
   Entity,
   OneToMany,
+  ManyToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
 import { AddressEntity } from './address.entity';
 import { EntityRelationalHelper } from '@utils/relational-entity-helper';
+import { Contact } from '../../../../../contact/contact.entity';
 
 @Entity({ name: 'company' })
 export class CompanyEntity extends EntityRelationalHelper {
@@ -54,6 +56,9 @@ export class CompanyEntity extends EntityRelationalHelper {
     eager: true,
   })
   addresses?: AddressEntity[];
+
+  @ManyToMany(() => Contact, (contact) => contact.companies)
+  contacts: Contact[];
 
   @CreateDateColumn()
   createdAt: Date;
