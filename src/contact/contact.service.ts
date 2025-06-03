@@ -5,6 +5,7 @@ import { Contact } from './contact.entity';
 import { CreateContactDto } from './create-contact.dto';
 import { UpdateContactDto } from './update-contact.dto';
 import { plainToClass } from 'class-transformer';
+import { CompanyEntity } from '../companies/infrastructure/persistence/relational/entities/company.entity';
 
 @Injectable()
 export class ContactService {
@@ -23,6 +24,11 @@ export class ContactService {
 
   create(createContactDto: CreateContactDto): Promise<Contact> {
     const contactEntity = plainToClass(Contact, createContactDto);
+    if (createContactDto.companies) {
+      contactEntity.companies = createContactDto.companies.map(
+        (id) => ({ id } as CompanyEntity),
+      );
+    }
     return this.contactRepository.save(contactEntity);
   }
 
