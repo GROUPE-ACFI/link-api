@@ -25,7 +25,7 @@ import {
   InfinityPaginationResponse,
   InfinityPaginationResponseDto,
 } from '@utils/dto/infinity-pagination-response.dto';
-import { QueryContactDto } from './dto/query-contact.dto';
+import { QueryContactDto } from '@contacts/dto/query-contact.dto';
 import { infinityPagination } from '@utils/infinity-pagination';
 
 @ApiBearerAuth()

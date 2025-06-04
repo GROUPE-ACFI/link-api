@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { ContactRepository } from '../../contact.repository';
+import { ContactRepository } from '@contacts/infrastructure/persistence/contact.repository';
 import { ContactEntity } from '@contacts/infrastructure/persistence/relational/entities/contact.entity';
 import { Contact } from '@contacts/domain/contact';
 import { ContactMapper } from '@contacts/infrastructure/persistence/relational/mappers/contact.mapper';

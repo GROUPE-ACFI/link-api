@@ -1,6 +1,6 @@
-import { Contact } from '../../domain/contact';
-import { IPaginationOptions } from '../../../utils/types/pagination-options';
-import { NullableType } from '../../../utils/types/nullable.type';
+import { Contact } from '@contacts/domain/contact';
+import { IPaginationOptions } from '@utils/types/pagination-options';
+import { NullableType } from '@utils/types/nullable.type';
 
 export abstract class ContactRepository {
   abstract create(data: Omit<Contact, 'id'>): Promise<Contact>;

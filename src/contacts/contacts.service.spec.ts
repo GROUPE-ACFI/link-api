@@ -1,5 +1,5 @@
-import { ContactsService } from './contacts.service';
-import { ContactRepository } from './infrastructure/persistence/contact.repository';
+import { ContactsService } from '@contacts/contacts.service';
+import { ContactRepository } from '@contacts//infrastructure/persistence/contact.repository';
 import { CreateContactDto } from '@contacts/dto/create-contact.dto';
 
 describe('ContactsService', () => {

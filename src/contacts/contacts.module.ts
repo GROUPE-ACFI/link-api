@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ContactsService } from '@contacts/contacts.service';
 import { ContactsController } from '@contacts/contacts.controller';
-import { RelationalContactPersistenceModule } from './infrastructure/persistence/relational/relational-persistence.module';
+import { RelationalContactPersistenceModule } from '@contacts/infrastructure/persistence/relational/relational-persistence.module';
 
 const infrastructurePersistenceModule = RelationalContactPersistenceModule;
 
