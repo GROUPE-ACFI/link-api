@@ -8,8 +8,8 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
-import { CompanyEntity } from '../../../../companies/infrastructure/persistence/relational/entities/company.entity';
-import { EntityRelationalHelper } from '../../../../utils/relational-entity-helper';
+import { CompanyEntity } from '@companies/infrastructure/persistence/relational/entities/company.entity';
+import { EntityRelationalHelper } from '@utils/relational-entity-helper';
 
 @Entity({ name: 'contact' })
 export class ContactEntity extends EntityRelationalHelper {

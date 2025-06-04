@@ -2,11 +2,11 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { ContactRepository } from '../../contact.repository';
-import { ContactEntity } from '../entities/contact.entity';
-import { Contact } from '../../../domain/contact';
-import { ContactMapper } from '../mappers/contact.mapper';
-import { IPaginationOptions } from '../../../../utils/types/pagination-options';
-import { NullableType } from '../../../../utils/types/nullable.type';
+import { ContactEntity } from '@contacts/infrastructure/persistence/relational/entities/contact.entity';
+import { Contact } from '@contacts/domain/contact';
+import { ContactMapper } from '@contacts/infrastructure/persistence/relational/mappers/contact.mapper';
+import { IPaginationOptions } from '@utils/types/pagination-options';
+import { NullableType } from '@utils/types/nullable.type';
 
 @Injectable()
 export class ContactsRelationalRepository implements ContactRepository {

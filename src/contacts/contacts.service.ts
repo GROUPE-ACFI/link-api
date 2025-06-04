@@ -1,12 +1,12 @@
 import { Injectable } from '@nestjs/common';
 import { ContactRepository } from './infrastructure/persistence/contact.repository';
-import { CreateContactDto } from './dto/create-contact.dto';
-import { UpdateContactDto } from './dto/update-contact.dto';
+import { CreateContactDto } from '@contacts/dto/create-contact.dto';
+import { UpdateContactDto } from '@contacts/dto/update-contact.dto';
 import { Contact } from './domain/contact';
-import { IPaginationOptions } from '../utils/types/pagination-options';
-import { NullableType } from '../utils/types/nullable.type';
-import { Company } from '../companies/domain/company';
-import { CompanyDto } from './dto/company.dto';
+import { IPaginationOptions } from '@utils/types/pagination-options';
+import { NullableType } from '@utils/types/nullable.type';
+import { Company } from '@companies/domain/company';
+import { CompanyDto } from '@contacts/dto/company.dto';
 
 @Injectable()
 export class ContactsService {

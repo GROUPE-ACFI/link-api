@@ -9,7 +9,7 @@ import {
   ValidateNested,
 } from 'class-validator';
 import { Type } from 'class-transformer';
-import { CompanyDto } from './company.dto';
+import { CompanyDto } from '@contacts/dto/company.dto';
 
 export class CreateContactDto {
   @ApiProperty()

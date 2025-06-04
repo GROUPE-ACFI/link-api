@@ -1,8 +1,7 @@
-import { Contact } from '../../../domain/contact';
-import { ContactEntity } from '../entities/contact.entity';
-import { CompanyEntity } from '../../../../companies/infrastructure/persistence/relational/entities/company.entity';
-import { Company } from '../../../../companies/domain/company';
-import { CompanyMapper } from '../../../../companies/infrastructure/persistence/relational/mappers/company.mapper';
+import { Contact } from '@contacts/domain/contact';
+import { ContactEntity } from '@contacts/infrastructure/persistence/relational/entities/contact.entity';
+import { CompanyEntity } from '@companies/infrastructure/persistence/relational/entities/company.entity';
+import { CompanyMapper } from '@companies/infrastructure/persistence/relational/mappers/company.mapper';
 
 export class ContactMapper {
   static toDomain(entity: ContactEntity): Contact {

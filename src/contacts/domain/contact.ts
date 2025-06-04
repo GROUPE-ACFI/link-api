@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { Company } from '../../companies/domain/company';
+import { Company } from '@companies/domain/company';
 
 export class Contact {
   @ApiProperty({ type: String, example: 'uuid' })

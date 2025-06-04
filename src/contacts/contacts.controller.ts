@@ -17,16 +17,16 @@ import {
   ApiTags,
   ApiParam,
 } from '@nestjs/swagger';
-import { ContactsService } from './contacts.service';
-import { CreateContactDto } from './dto/create-contact.dto';
-import { UpdateContactDto } from './dto/update-contact.dto';
-import { Contact } from './domain/contact';
+import { ContactsService } from '@contacts/contacts.service';
+import { CreateContactDto } from '@contacts/dto/create-contact.dto';
+import { UpdateContactDto } from '@contacts/dto/update-contact.dto';
+import { Contact } from '@contacts/domain/contact';
 import {
   InfinityPaginationResponse,
   InfinityPaginationResponseDto,
-} from '../utils/dto/infinity-pagination-response.dto';
+} from '@utils/dto/infinity-pagination-response.dto';
 import { QueryContactDto } from './dto/query-contact.dto';
-import { infinityPagination } from '../utils/infinity-pagination';
+import { infinityPagination } from '@utils/infinity-pagination';
 
 @ApiBearerAuth()
 @ApiTags('Contacts')
