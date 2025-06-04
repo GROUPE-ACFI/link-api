@@ -13,7 +13,8 @@
     "paths": {
       "@utils/*": ["utils/*"],
       "@companies/*": ["companies/*"],
-      "@contacts/*": ["contacts/*"]
+      "@contacts/*": ["contacts/*"],
+      "@opportunities/*": ["opportunities/*"]
     },
     "incremental": true,
     "skipLibCheck": true,

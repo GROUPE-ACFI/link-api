@@ -133,7 +133,8 @@
     "moduleNameMapper": {
       "^@utils/(.*)$":     "<rootDir>/utils/$1",
       "^@companies/(.*)$": "<rootDir>/companies/$1",
-      "^@contacts/(.*)$":  "<rootDir>/contacts/$1"
+      "^@contacts/(.*)$":  "<rootDir>/contacts/$1",
+      "^@opportunities/(.*)$": "<rootDir>/opportunities/$1"
     }
   },
   "engines": {
