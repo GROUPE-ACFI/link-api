@@ -10,7 +10,7 @@ import {
 } from 'typeorm';
 import { AddressEntity } from './address.entity';
 import { EntityRelationalHelper } from '@utils/relational-entity-helper';
-import { ContactEntity } from '../../../../contacts/infrastructure/persistence/relational/entities/contact.entity';
+import { ContactEntity } from '@contacts/infrastructure/persistence/relational/entities/contact.entity';
 
 @Entity({ name: 'company' })
 export class CompanyEntity extends EntityRelationalHelper {
