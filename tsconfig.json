@@ -12,7 +12,8 @@
     "baseUrl": "./",
     "paths": {
       "@utils/*": ["src/utils/*"],
-      "@companies/*": ["src/companies/*"]
+      "@companies/*": ["src/companies/*"],
+      "@contacts/*": ["src/contacts/*"]
     },
     "incremental": true,
     "skipLibCheck": true,
