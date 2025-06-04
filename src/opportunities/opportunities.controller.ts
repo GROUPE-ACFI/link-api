@@ -17,11 +17,11 @@ import {
   ApiParam,
   ApiTags,
 } from '@nestjs/swagger';
-import { OpportunitiesService } from './opportunities.service';
-import { CreateOpportunityDto } from './dto/create-opportunity.dto';
-import { UpdateOpportunityDto } from './dto/update-opportunity.dto';
-import { Opportunity } from './domain/opportunity';
-import { QueryOpportunityDto } from './dto/query-opportunity.dto';
+import { OpportunitiesService } from '@opportunities/opportunities.service';
+import { CreateOpportunityDto } from '@opportunities/dto/create-opportunity.dto';
+import { UpdateOpportunityDto } from '@opportunities/dto/update-opportunity.dto';
+import { Opportunity } from '@opportunities/domain/opportunity';
+import { QueryOpportunityDto } from '@opportunities/dto/query-opportunity.dto';
 
 @ApiBearerAuth()
 @ApiTags('Opportunities')

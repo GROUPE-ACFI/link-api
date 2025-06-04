@@ -5,7 +5,9 @@ import { NullableType } from '@utils/types/nullable.type';
 export abstract class OpportunityRepository {
   abstract create(data: Omit<Opportunity, 'id'>): Promise<Opportunity>;
 
-  abstract findAll(query: QueryOpportunityDto): Promise<[Opportunity[], number]>;
+  abstract findAll(
+    query: QueryOpportunityDto,
+  ): Promise<[Opportunity[], number]>;
 
   abstract findById(id: Opportunity['id']): Promise<NullableType<Opportunity>>;
 

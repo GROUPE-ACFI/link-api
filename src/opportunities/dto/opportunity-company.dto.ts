@@ -6,9 +6,34 @@ export class OpportunityCompanyDto {
   @IsString()
   companyId: string;
 
-  @ApiProperty({ enum: ['client', 'buyer', 'supplier', 'insurer', 'factor', 'central', 'introducer'] })
-  @IsEnum(['client', 'buyer', 'supplier', 'insurer', 'factor', 'central', 'introducer'])
-  role: 'client' | 'buyer' | 'supplier' | 'insurer' | 'factor' | 'central' | 'introducer';
+  @ApiProperty({
+    enum: [
+      'client',
+      'buyer',
+      'supplier',
+      'insurer',
+      'factor',
+      'central',
+      'introducer',
+    ],
+  })
+  @IsEnum([
+    'client',
+    'buyer',
+    'supplier',
+    'insurer',
+    'factor',
+    'central',
+    'introducer',
+  ])
+  role:
+    | 'client'
+    | 'buyer'
+    | 'supplier'
+    | 'insurer'
+    | 'factor'
+    | 'central'
+    | 'introducer';
 
   @ApiPropertyOptional({ enum: ['invited', 'confirmed', 'rejected'] })
   @IsOptional()

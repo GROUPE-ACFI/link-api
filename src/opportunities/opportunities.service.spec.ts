@@ -1,6 +1,6 @@
-import { OpportunitiesService } from './opportunities.service';
-import { OpportunityRepository } from './infrastructure/persistence/opportunity.repository';
-import { CreateOpportunityDto } from './dto/create-opportunity.dto';
+import { OpportunitiesService } from '@opportunities/opportunities.service';
+import { OpportunityRepository } from '@opportunities/infrastructure/persistence/opportunity.repository';
+import { CreateOpportunityDto } from '@opportunities/dto/create-opportunity.dto';
 
 describe('OpportunitiesService', () => {
   let service: OpportunitiesService;

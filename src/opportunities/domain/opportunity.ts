@@ -1,7 +1,7 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { OpportunityCompany } from './opportunity-company';
-import { OpLine } from './op-line';
-import { Commission } from './commission';
+import { OpportunityCompany } from '@opportunities/domain/opportunity-company';
+import { OpLine } from '@opportunities/domain/op-line';
+import { Commission } from '@opportunities/domain/commission';
 
 export class Opportunity {
   @ApiProperty({ type: String, example: 'uuid' })

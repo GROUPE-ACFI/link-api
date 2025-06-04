@@ -2,7 +2,9 @@ import { ApiProperty } from '@nestjs/swagger';
 import { IsEnum, IsOptional, IsString } from 'class-validator';
 
 export class OpportunityLineDto {
-  @ApiProperty({ enum: ['ReverseFactoringLine', 'FactoringLine', 'CreditInsuranceLine'] })
+  @ApiProperty({
+    enum: ['ReverseFactoringLine', 'FactoringLine', 'CreditInsuranceLine'],
+  })
   @IsEnum(['ReverseFactoringLine', 'FactoringLine', 'CreditInsuranceLine'])
   _type: 'ReverseFactoringLine' | 'FactoringLine' | 'CreditInsuranceLine';
 

@@ -5,7 +5,7 @@ import {
   ManyToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { OpportunityEntity } from './opportunity.entity';
+import { OpportunityEntity } from '@opportunities/infrastructure/persistence/relational/entities/opportunity.entity';
 import { EntityRelationalHelper } from '@utils/relational-entity-helper';
 
 @Entity({ name: 'commission' })

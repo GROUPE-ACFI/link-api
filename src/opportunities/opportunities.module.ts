@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
-import { OpportunitiesService } from './opportunities.service';
-import { OpportunitiesController } from './opportunities.controller';
-import { RelationalOpportunityPersistenceModule } from './infrastructure/persistence/relational/relational-persistence.module';
+import { OpportunitiesService } from '@opportunities/opportunities.service';
+import { OpportunitiesController } from '@opportunities/opportunities.controller';
+import { RelationalOpportunityPersistenceModule } from '@opportunities/infrastructure/persistence/relational/relational-persistence.module';
 
 const infrastructurePersistenceModule = RelationalOpportunityPersistenceModule;
 

@@ -1,13 +1,18 @@
 import { Injectable } from '@nestjs/common';
-import { OpportunityRepository } from './infrastructure/persistence/opportunity.repository';
-import { CreateOpportunityDto } from './dto/create-opportunity.dto';
-import { UpdateOpportunityDto } from './dto/update-opportunity.dto';
-import { QueryOpportunityDto } from './dto/query-opportunity.dto';
-import { Opportunity } from './domain/opportunity';
-import { OpportunityCompany } from './domain/opportunity-company';
-import { OpportunityLineDto } from './dto/opportunity-line.dto';
-import { OpportunityCompanyDto } from './dto/opportunity-company.dto';
-import { OpLine, FactoringLine, ReverseFactoringLine, CreditInsuranceLine } from './domain/op-line';
+import { OpportunityRepository } from '@opportunities/infrastructure/persistence/opportunity.repository';
+import { CreateOpportunityDto } from '@opportunities/dto/create-opportunity.dto';
+import { UpdateOpportunityDto } from '@opportunities/dto/update-opportunity.dto';
+import { QueryOpportunityDto } from '@opportunities/dto/query-opportunity.dto';
+import { Opportunity } from '@opportunities/domain/opportunity';
+import { OpportunityCompany } from '@opportunities/domain/opportunity-company';
+import { OpportunityLineDto } from '@opportunities/dto/opportunity-line.dto';
+import { OpportunityCompanyDto } from '@opportunities/dto/opportunity-company.dto';
+import {
+  OpLine,
+  FactoringLine,
+  ReverseFactoringLine,
+  CreditInsuranceLine,
+} from '@opportunities//domain/op-line';
 
 @Injectable()
 export class OpportunitiesService {
@@ -38,10 +43,15 @@ export class OpportunitiesService {
     return this.repository.findById(id);
   }
 
-  async update(id: Opportunity['id'], dto: UpdateOpportunityDto): Promise<Opportunity | null> {
+  async update(
+    id: Opportunity['id'],
+    dto: UpdateOpportunityDto,
+  ): Promise<Opportunity | null> {
     const payload: Partial<Omit<Opportunity, 'id'>> = {
       ...dto,
-      participants: dto.participants ? this.mapParticipants(dto.participants) : undefined,
+      participants: dto.participants
+        ? this.mapParticipants(dto.participants)
+        : undefined,
       lines: dto.lines ? this.mapLines(dto.lines) : undefined,
       updatedAt: new Date(),
     };
@@ -52,8 +62,7 @@ export class OpportunitiesService {
     return this.repository.remove(id);
   }
 
-  private mapLines(dtos?: OpportunityLineDto[]): OpLine[] | undefined {
-    if (!dtos) return undefined;
+  private mapLines(dtos: OpportunityLineDto[] = []): OpLine[] {
     return dtos.map((dto) => {
       switch (dto._type) {
         case 'ReverseFactoringLine':
@@ -73,8 +82,9 @@ export class OpportunitiesService {
     });
   }
 
-  private mapParticipants(dtos?: OpportunityCompanyDto[]): OpportunityCompany[] | undefined {
-    if (!dtos) return undefined;
+  private mapParticipants(
+    dtos: OpportunityCompanyDto[] = [],
+  ): OpportunityCompany[] {
     return dtos.map((dto) => {
       const p = new OpportunityCompany();
       p.companyId = dto.companyId;

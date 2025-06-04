@@ -14,7 +14,7 @@ export class ReverseFactoringLine implements OpLine {
   opportunityId: string;
 
   @ApiProperty({ enum: ['ReverseFactoringLine'] })
-  _type: 'ReverseFactoringLine' = 'ReverseFactoringLine';
+  _type = 'ReverseFactoringLine' as const;
 
   @ApiProperty()
   buyerId: string;
@@ -31,7 +31,7 @@ export class FactoringLine implements OpLine {
   opportunityId: string;
 
   @ApiProperty({ enum: ['FactoringLine'] })
-  _type: 'FactoringLine' = 'FactoringLine';
+  _type = 'FactoringLine' as const;
 
   @ApiProperty()
   factorId: string;
@@ -45,7 +45,7 @@ export class CreditInsuranceLine implements OpLine {
   opportunityId: string;
 
   @ApiProperty({ enum: ['CreditInsuranceLine'] })
-  _type: 'CreditInsuranceLine' = 'CreditInsuranceLine';
+  _type = 'CreditInsuranceLine' as const;
 
   @ApiProperty()
   insurerId: string;

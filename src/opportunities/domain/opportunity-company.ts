@@ -10,8 +10,25 @@ export class OpportunityCompany {
   @ApiProperty()
   companyId: string;
 
-  @ApiProperty({ enum: ['client', 'buyer', 'supplier', 'insurer', 'factor', 'central', 'introducer'] })
-  role: 'client' | 'buyer' | 'supplier' | 'insurer' | 'factor' | 'central' | 'introducer';
+  @ApiProperty({
+    enum: [
+      'client',
+      'buyer',
+      'supplier',
+      'insurer',
+      'factor',
+      'central',
+      'introducer',
+    ],
+  })
+  role:
+    | 'client'
+    | 'buyer'
+    | 'supplier'
+    | 'insurer'
+    | 'factor'
+    | 'central'
+    | 'introducer';
 
   @ApiProperty()
   addedAt: Date;

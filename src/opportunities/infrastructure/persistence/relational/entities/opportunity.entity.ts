@@ -7,9 +7,9 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
-import { OpportunityCompanyEntity } from './opportunity-company.entity';
-import { OpportunityLineEntity } from './opportunity-line.entity';
-import { CommissionEntity } from './commission.entity';
+import { OpportunityCompanyEntity } from '@opportunities/infrastructure/persistence/relational/entities/opportunity-company.entity';
+import { OpportunityLineEntity } from '@opportunities/infrastructure/persistence/relational/entities/opportunity-line.entity';
+import { CommissionEntity } from '@opportunities/infrastructure/persistence/relational/entities/commission.entity';
 import { EntityRelationalHelper } from '@utils/relational-entity-helper';
 
 @Entity({ name: 'opportunity' })

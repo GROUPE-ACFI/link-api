@@ -1,9 +1,14 @@
 import { Opportunity } from '@opportunities/domain/opportunity';
-import { OpportunityEntity } from '../entities/opportunity.entity';
+import { OpportunityEntity } from '@opportunities/infrastructure/persistence/relational/entities/opportunity.entity';
 import { OpportunityCompany } from '@opportunities/domain/opportunity-company';
-import { OpportunityCompanyEntity } from '../entities/opportunity-company.entity';
-import { OpportunityLineEntity } from '../entities/opportunity-line.entity';
-import { OpLine, ReverseFactoringLine, FactoringLine, CreditInsuranceLine } from '@opportunities/domain/op-line';
+import { OpportunityCompanyEntity } from '@opportunities/infrastructure/persistence/relational/entities/opportunity-company.entity';
+import { OpportunityLineEntity } from '@opportunities/infrastructure/persistence/relational/entities/opportunity-line.entity';
+import {
+  OpLine,
+  ReverseFactoringLine,
+  FactoringLine,
+  CreditInsuranceLine,
+} from '@opportunities/domain/op-line';
 import { Commission } from '@opportunities/domain/commission';
 import { CommissionEntity } from '../entities/commission.entity';
 
@@ -19,9 +24,11 @@ export class OpportunityMapper {
     o.signedAt = entity.signedAt ?? undefined;
     o.description = entity.description ?? undefined;
     o.totalEstimatedAmount = entity.totalEstimatedAmount ?? undefined;
-    o.participants = entity.participants?.map((p) => this.companyToDomain(p)) ?? [];
+    o.participants =
+      entity.participants?.map((p) => this.companyToDomain(p)) ?? [];
     o.lines = entity.lines?.map((l) => this.lineToDomain(l)) ?? [];
-    o.commissions = entity.commissions?.map((c) => this.commissionToDomain(c)) ?? [];
+    o.commissions =
+      entity.commissions?.map((c) => this.commissionToDomain(c)) ?? [];
     return o;
   }
 
@@ -36,13 +43,19 @@ export class OpportunityMapper {
     e.signedAt = domain.signedAt;
     e.description = domain.description;
     e.totalEstimatedAmount = domain.totalEstimatedAmount;
-    e.participants = domain.participants?.map((p) => this.companyToPersistence(p));
+    e.participants = domain.participants?.map((p) =>
+      this.companyToPersistence(p),
+    );
     e.lines = domain.lines?.map((l) => this.lineToPersistence(l));
-    e.commissions = domain.commissions?.map((c) => this.commissionToPersistence(c));
+    e.commissions = domain.commissions?.map((c) =>
+      this.commissionToPersistence(c),
+    );
     return e;
   }
 
-  private static companyToDomain(e: OpportunityCompanyEntity): OpportunityCompany {
+  private static companyToDomain(
+    e: OpportunityCompanyEntity,
+  ): OpportunityCompany {
     const c = new OpportunityCompany();
     c.id = e.id;
     c.opportunityId = e.opportunity?.id;
@@ -54,7 +67,9 @@ export class OpportunityMapper {
     return c;
   }
 
-  private static companyToPersistence(d: OpportunityCompany): OpportunityCompanyEntity {
+  private static companyToPersistence(
+    d: OpportunityCompany,
+  ): OpportunityCompanyEntity {
     const e = new OpportunityCompanyEntity();
     if (d.id) e.id = d.id;
     if (d.opportunityId) e.opportunity = { id: d.opportunityId } as any;

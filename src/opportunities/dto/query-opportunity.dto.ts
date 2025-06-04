@@ -20,9 +20,27 @@ export class QueryOpportunityDto {
   @IsString()
   search?: string;
 
-  @ApiPropertyOptional({ enum: ['draft', 'in_progress', 'proposal_sent', 'won', 'lost', 'active', 'closed'] })
+  @ApiPropertyOptional({
+    enum: [
+      'draft',
+      'in_progress',
+      'proposal_sent',
+      'won',
+      'lost',
+      'active',
+      'closed',
+    ],
+  })
   @IsOptional()
-  @IsEnum(['draft', 'in_progress', 'proposal_sent', 'won', 'lost', 'active', 'closed'])
+  @IsEnum([
+    'draft',
+    'in_progress',
+    'proposal_sent',
+    'won',
+    'lost',
+    'active',
+    'closed',
+  ])
   status?:
     | 'draft'
     | 'in_progress'
@@ -32,7 +50,9 @@ export class QueryOpportunityDto {
     | 'active'
     | 'closed';
 
-  @ApiPropertyOptional({ enum: ['factoring', 'reverse_factoring', 'credit_insurance'] })
+  @ApiPropertyOptional({
+    enum: ['factoring', 'reverse_factoring', 'credit_insurance'],
+  })
   @IsOptional()
   @IsEnum(['factoring', 'reverse_factoring', 'credit_insurance'])
   type?: 'factoring' | 'reverse_factoring' | 'credit_insurance';
