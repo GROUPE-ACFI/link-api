@@ -7,7 +7,7 @@ import {
   OneToMany,
 } from 'typeorm';
 import { EntityRelationalHelper } from '@utils/relational-entity-helper';
-import { ContractProductEntity } from '../../../../contract-products/infrastructure/persistence/relational/entities/contract-product.entity';
+import { ContractProductEntity } from '@contract-products/infrastructure/persistence/relational/entities/contract-product.entity';
 
 @Entity({ name: 'contract' })
 export class ContractEntity extends EntityRelationalHelper {
