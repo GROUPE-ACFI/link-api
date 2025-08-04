@@ -15,7 +15,9 @@
       "@companies/*": ["companies/*"],
       "@contacts/*": ["contacts/*"],
       "@opportunities/*": ["opportunities/*"],
-      "@partners/*": ["partners/*"]
+      "@partners/*": ["partners/*"],
+      "@contracts/*": ["contracts/*"],
+      "@contract-products/*": ["contract-products/*"]
     },
     "incremental": true,
     "skipLibCheck": true,
