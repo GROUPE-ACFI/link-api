@@ -8,7 +8,7 @@ import {
   JoinColumn,
 } from 'typeorm';
 import { EntityRelationalHelper } from '@utils/relational-entity-helper';
-import { ContractEntity } from '../../../../contracts/infrastructure/persistence/relational/entities/contract.entity';
+import { ContractEntity } from '@contracts/infrastructure/persistence/relational/entities/contract.entity';
 
 @Entity({ name: 'contract_product' })
 export class ContractProductEntity extends EntityRelationalHelper {
