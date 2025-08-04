@@ -25,6 +25,7 @@ import { MailerModule } from './mailer/mailer.module';
 import { CompaniesModule } from './companies/companies.module';
 import { ContactsModule } from './contacts/contacts.module';
 import { OpportunitiesModule } from './opportunities/opportunities.module';
+import { PartnersModule } from './partners/partners.module';
 
 const infrastructureDatabaseModule = TypeOrmModule.forRootAsync({
   useClass: TypeOrmConfigService,
@@ -83,6 +84,7 @@ const infrastructureDatabaseModule = TypeOrmModule.forRootAsync({
     CompaniesModule,
     ContactsModule,
     OpportunitiesModule,
+    PartnersModule,
     HomeModule,
   ],
 })
