@@ -19,6 +19,7 @@
     "add:property:to-relational": "hygen property add-to-relational",
     "postadd:property:to-relational": "npm run lint -- --fix",
     "seed:run:relational": "ts-node -r tsconfig-paths/register ./src/database/seeds/relational/run-seed.ts",
+    "seed:partners": "ts-node -r tsconfig-paths/register ./src/database/seeds/relational/partner/run-partner-seed.ts",
     "prebuild": "rimraf dist",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
@@ -134,7 +135,10 @@
       "^@utils/(.*)$":     "<rootDir>/utils/$1",
       "^@companies/(.*)$": "<rootDir>/companies/$1",
       "^@contacts/(.*)$":  "<rootDir>/contacts/$1",
-      "^@opportunities/(.*)$": "<rootDir>/opportunities/$1"
+      "^@opportunities/(.*)$": "<rootDir>/opportunities/$1",
+      "^@partners/(.*)$": "<rootDir>/partners/$1",
+      "^@contracts/(.*)$": "<rootDir>/contracts/$1",
+      "^@contract-products/(.*)$": "<rootDir>/contract-products/$1"
     }
   },
   "engines": {
