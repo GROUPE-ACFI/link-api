@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { PartnerEntity } from '../../../../partners/infrastructure/persistence/relational/entities/partner.entity';
-import { PartnerType } from '../../../../partners/domain/partner';
+import { PartnerEntity } from '@partners/infrastructure/persistence/relational/entities/partner.entity';
+import { PartnerType } from '@partners/domain/partner';
 
 @Injectable()
 export class PartnerSeedService {
