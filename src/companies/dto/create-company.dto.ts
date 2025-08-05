@@ -11,7 +11,7 @@ import {
   ValidateNested,
 } from 'class-validator';
 import { Type } from 'class-transformer';
-import { AddressDto } from './address.dto';
+import { CreateAddressDto } from './create-address.dto';
 
 export class CreateCompanyDto {
   @ApiProperty()
@@ -57,10 +57,10 @@ export class CreateCompanyDto {
   @IsString()
   website?: string;
 
-  @ApiPropertyOptional({ type: () => [AddressDto] })
+  @ApiPropertyOptional({ type: () => [CreateAddressDto] })
   @IsOptional()
   @IsArray()
   @ValidateNested({ each: true })
-  @Type(() => AddressDto)
-  addresses?: AddressDto[];
+  @Type(() => CreateAddressDto)
+  addresses?: CreateAddressDto[];
 }

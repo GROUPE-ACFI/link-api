@@ -1,13 +1,8 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsEnum, IsNotEmpty, IsString, IsUUID } from 'class-validator';
+import { IsEnum, IsNotEmpty, IsString } from 'class-validator';
 import { AddressType } from '../domain/address-type.enum';
 
-export class AddressDto {
-  @ApiProperty({ required: false })
-  @IsUUID()
-  @IsNotEmpty()
-  id?: string;
-
+export class CreateAddressDto {
   @ApiProperty()
   @IsString()
   @IsNotEmpty()

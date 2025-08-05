@@ -6,7 +6,8 @@ import { Company } from './domain/company';
 import { IPaginationOptions } from '@utils/types/pagination-options';
 import { NullableType } from '@utils/types/nullable.type';
 import { Address } from './domain/address';
-import { AddressDto } from './dto/address.dto';
+import { CreateAddressDto } from './dto/create-address.dto';
+import { UpdateAddressDto } from './dto/update-address.dto';
 
 @Injectable()
 export class CompaniesService {
@@ -55,7 +56,9 @@ export class CompaniesService {
     return this.repository.remove(id);
   }
 
-  private mapAddresses(dtos?: AddressDto[]): Address[] | null {
+  private mapAddresses(
+    dtos?: (CreateAddressDto | UpdateAddressDto)[],
+  ): Address[] | null {
     if (!dtos || dtos.length === 0) {
       return null;
     }
@@ -63,12 +66,23 @@ export class CompaniesService {
     return dtos.map((dto) => {
       const address = new Address();
 
-      address.street = dto.street;
-      address.postalCode = dto.postalCode;
-      address.city = dto.city;
-      address.country = dto.country;
+      if (dto.street) {
+        address.street = dto.street;
+      }
+      if (dto.postalCode) {
+        address.postalCode = dto.postalCode;
+      }
+      if (dto.city) {
+        address.city = dto.city;
+      }
+      if (dto.country) {
+        address.country = dto.country;
+      }
+      if (dto.type) {
+        address.type = dto.type;
+      }
 
-      if (dto.id) {
+      if ('id' in dto && dto.id) {
         address.id = dto.id;
       }
 
